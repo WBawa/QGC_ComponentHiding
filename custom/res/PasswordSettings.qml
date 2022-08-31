@@ -74,6 +74,7 @@ Rectangle {
                         passcodeField.text = ""
                         currentAccessType = accessType
                         QGroundControl.corePlugin.setAccessType(accessType);
+                        QGroundControl.corePlugin.updateFlightModes();
                         loginMessage.color = qgcPal.statusPassedText
                         loginMessage.text = "Access type changed to " + accessType
                     } else if (accessType == currentAccessType) {

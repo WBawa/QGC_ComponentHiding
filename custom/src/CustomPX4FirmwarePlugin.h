@@ -10,6 +10,7 @@ class CustomPX4FirmwarePlugin : public PX4FirmwarePlugin {
   public:
     CustomPX4FirmwarePlugin();
     const QVariantList &toolIndicators(const Vehicle *vehicle) final;
+    void updateFlightModes();
 
   private:
     QVariantList _toolIndicatorList;

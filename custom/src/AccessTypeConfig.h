@@ -4,5 +4,6 @@
 #include "AccessType.h"
 
 AccessType getInitialUserAccessType();
+void setUserAccessType(AccessType newAccessType);
 
 #endif // ACCESSTYPECONFIG_H

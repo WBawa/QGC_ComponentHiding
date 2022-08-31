@@ -2,6 +2,7 @@
 #include "CustomCorePlugin.h"
 #include "QmlComponentInfo.h"
 #include "AccessTypeConfig.h"
+#include "CustomPX4FirmwarePlugin.h"
 #include "MAVLinkLogManager.h"
 #include "PasscodeMenu/PasscodeManager.h"
 #include <iostream>
@@ -14,6 +15,8 @@ CustomCorePlugin::CustomCorePlugin(QGCApplication *app, QGCToolbox *toolbox)
     : QGCCorePlugin(app, toolbox) { }
 
 CustomCorePlugin::~CustomCorePlugin() {}
+
+CustomPX4FirmwarePlugin *px4FirmwarePlugin;
 
 void CustomCorePlugin::paletteOverride(QString colorName, QGCPalette::PaletteColorInfo_t& colorInfo) {
     if (colorName == QStringLiteral("warningText")) {
@@ -72,6 +75,13 @@ void CustomCorePlugin::setAccessType(QString qAccessType) {
         this->_accessType = AccessType::Basic;
         std::cout << "Setting to Basic in Else" << std::endl;
     }
+
+    setUserAccessType(this->_accessType);
+}
+
+void CustomCorePlugin::updateFlightModes() {
+   std::cout << "updating flight modes" << std::endl;
+   px4FirmwarePlugin->updateFlightModes();
 }
 
 QQmlApplicationEngine *
@@ -85,9 +95,11 @@ CustomCorePlugin::createQmlApplicationEngine(QObject *parent) {
         QString::fromStdString(accessTypeString(currentAccessType)));
     
     PasscodeManager *passcodeManager = new PasscodeManager();
+    px4FirmwarePlugin = new CustomPX4FirmwarePlugin();
 
     engine->rootContext()->setContextProperty("CustomCorePlugin", this);
     engine->rootContext()->setContextProperty("PasscodeManager", passcodeManager);
+    engine->rootContext()->setContextProperty("CustomPX4FirmwarePlugin", px4FirmwarePlugin);
 
     return engine;
 }
