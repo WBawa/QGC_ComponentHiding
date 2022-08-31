@@ -59,6 +59,7 @@ void CustomCorePlugin::setAccessType(QString qAccessType) {
     std::cout << "SET ACCESS TYPE IS BEING CALLED" << std::endl;
     string newAccessType = qAccessType.toStdString();
     std::cout << "TRYING TO SET: " << newAccessType << std::endl;
+    std::cout << "TRYING TO SET::::: " << qAccessType.toStdString() << std::endl;
     if (newAccessType == accessTypeString(AccessType::Basic)) {
         this->_accessType = AccessType::Basic;
         std::cout << "Setting to Basic" << std::endl;

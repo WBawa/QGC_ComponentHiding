@@ -63,8 +63,13 @@ Rectangle {
                 property string accessType: ""
 
                 onClicked: {
-                    accessType = PasscodeManager.submitPasscode(passcodeField.text)
+//                    accessType = PasscodeManager.submitPasscode(passcodeField.text) // this part is f*cked, not reading in a value
+                    accessType = passcodeField.text
                     CustomCorePlugin.setAccessType(accessType)
+                    console.log("Got into the onClicked dialogue")
+                    console.log("Access Type: " + accessType)
+                    console.log("Current Access Type: " + currentAccessType)
+                    console.log("Passcode Field Text: " + passcodeField.text)
                     if (accessType != "" && accessType != currentAccessType) {
                         passcodeField.text = ""
                         currentAccessType = accessType
