@@ -22,20 +22,19 @@ RowLayout {
 
     property real fontPointSize: ScreenTools.largeFontPointSize
     property var activeVehicle: QGroundControl.multiVehicleManager.activeVehicle
+    property string accessType: QGroundControl.corePlugin.accessType
 
     property var flightModesMenuItems: []
-    property var flightModesMenuItemsBasic: ["Hold", "Return", "Precision Land"]
+    property var flightModesMenuItemsBasic: ["Manual", "Hold", "Return", "Precision Land"]
     property var flightModesMenuItemsExpert: ["Manual", "Hold", "Return", "Precision Land", "Stabilized", "Acro", "Position", "Mission"]
-    property var flightModesMenuItemsFactory: ["Manual", "Stabilized", "Acro", "Rattitude", "Altitude", "Offboard", "Position", "Hold", "Mission,Return", "Follow Me", "Precision Land"]
+    property var flightModesMenuItemsFactory: ["Manual", "Stabilized", "Acro", "Rattitude", "Altitude", "Offboard", "Position", "Hold", "Mission", "Return", "Follow Me", "Precision Land"]
 
-    property string accessType: "Basic"
-
-    function updateFlightModesMenu() {
-        if (accessType == "Basic") {
+    function updateFlightModesMenu(newAccessType) {
+        if (newAccessType == "Basic") {
             flightModesMenuItems = flightModesMenuItemsBasic
-        } else if (accessType == "Expert") {
+        } else if (newAccessType == "Expert") {
             flightModesMenuItems = flightModesMenuItemsExpert
-        } else if (accessType == "Factory") {
+        } else if (newAccessType == "Factory") {
             flightModesMenuItems = flightModesMenuItemsFactory
         }
 
@@ -43,7 +42,7 @@ RowLayout {
 
     Connections {
         target:                 QGroundControl.multiVehicleManager
-        function onActiveVehicleChanged(activeVehicle) { _root.updateFlightModesMenu() }
+        function onActiveVehicleChanged(activeVehicle) { _root.updateFlightModesMenu(accessType) }
     }
 
     Component {
@@ -101,6 +100,7 @@ RowLayout {
             MouseArea {
                 anchors.fill: parent
                 onClicked: {
+                    updateFlightModesMenu(QGroundControl.corePlugin.accessType)
                     mainWindow.showIndicatorPopup(_root, flightModeMenu)
                 }
             }

@@ -71,10 +71,10 @@ void CustomCorePlugin::setAccessType(QString qAccessType) {
     } else if (newAccessType == accessTypeString(AccessType::Factory)) {
         this->_accessType = AccessType::Factory;
         std::cout << "Setting to Factory" << std::endl;
-    } else {
+    } /*else {
         this->_accessType = AccessType::Basic;
         std::cout << "Setting to Basic in Else" << std::endl;
-    }
+    }*/
 
     setUserAccessType(this->_accessType);
 }
