@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE QtCreatorProject>
-<!-- Written by QtCreator 8.0.0, 2022-08-30T13:11:56. -->
+<!-- Written by QtCreator 8.0.0, 2022-09-19T10:55:00. -->
 <qtcreator>
  <data>
   <variable>EnvironmentId</variable>
@@ -68,8 +68,8 @@
     <value type="bool" key="AutoTest.Framework.QtTest">true</value>
    </valuemap>
    <valuemap type="QVariantMap" key="AutoTest.CheckStates">
-    <value type="Qt::CheckState" key="1@/home/wahid/Documents/qgroundcontrol/src/qgcunittest/UnitTest.cc:_linkDeleted">Checked</value>
-    <value type="Qt::CheckState" key="1@/home/wahid/Documents/qgroundcontrol/src/qgcunittest/UnitTest.h:UnitTest">Checked</value>
+    <value type="Qt::CheckState" key="1@/home/wahid/Documents/QGC_ComponentHiding/src/qgcunittest/UnitTest.cc:_linkDeleted">Checked</value>
+    <value type="Qt::CheckState" key="1@/home/wahid/Documents/QGC_ComponentHiding/src/qgcunittest/UnitTest.h:UnitTest">Checked</value>
    </valuemap>
    <value type="int" key="AutoTest.RunAfterBuild">0</value>
    <value type="bool" key="AutoTest.UseGlobal">true</value>
@@ -238,8 +238,9 @@
     <valuelist type="QVariantList" key="CustomOutputParsers"/>
     <value type="int" key="PE.EnvironmentAspect.Base">2</value>
     <valuelist type="QVariantList" key="PE.EnvironmentAspect.Changes"/>
-    <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">Qt4ProjectManager.Qt4RunConfiguration:/home/wahid/Documents/qgroundcontrol/qgroundcontrol.pro</value>
-    <value type="QString" key="ProjectExplorer.RunConfiguration.BuildKey">/home/wahid/Documents/qgroundcontrol/qgroundcontrol.pro</value>
+    <value type="QString" key="ProjectExplorer.ProjectConfiguration.DisplayName">qgroundcontrol2</value>
+    <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">Qt4ProjectManager.Qt4RunConfiguration:/home/wahid/Documents/QGC_ComponentHiding/qgroundcontrol.pro</value>
+    <value type="QString" key="ProjectExplorer.RunConfiguration.BuildKey">/home/wahid/Documents/QGC_ComponentHiding/qgroundcontrol.pro</value>
     <value type="bool" key="RunConfiguration.UseCppDebugger">false</value>
     <value type="bool" key="RunConfiguration.UseCppDebuggerAuto">true</value>
     <value type="bool" key="RunConfiguration.UseLibrarySearchPath">true</value>

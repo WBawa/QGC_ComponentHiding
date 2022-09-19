@@ -20,4 +20,5 @@
     <file alias="APMTuningComponentCopter.qml">../../AutoPilotPlugins/APM/APMTuningComponentCopter.qml</file>
     <file alias="APMMotorComponent.qml">../../AutoPilotPlugins/APM/APMMotorComponent.qml</file>
     <file alias="QGroundControl/Controls/FlightModeMenu.qml">src/QmlControls/FlightModeMenu.qml</file>
+    <file alias="QGroundControl/Controls/FlightModeMenuIndicator.qml">src/ui/toolbar/FlightModeMenuIndicator.qml</file>
     <file alias="QGroundControl/Controls/MainToolBar.qml">src/ui/toolbar/MainToolBar.qml</file>
