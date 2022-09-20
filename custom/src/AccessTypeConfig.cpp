@@ -2,9 +2,9 @@
 #include "AccessType.h"
 #include <iostream>
 
-AccessType CURRENT_USER_ACCESS_TYPE = Basic;
+//AccessType CURRENT_USER_ACCESS_TYPE = Basic;
 //AccessType CURRENT_USER_ACCESS_TYPE = Expert;
-//AccessType CURRENT_USER_ACCESS_TYPE = Factory;
+AccessType CURRENT_USER_ACCESS_TYPE = Factory;
 
 AccessType getInitialUserAccessType() {
     std::cout << "THIS IS A TEST" << std::endl;

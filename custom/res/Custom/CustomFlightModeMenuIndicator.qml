@@ -38,6 +38,9 @@ RowLayout {
             flightModesMenuItems = flightModesMenuItemsFactory
         }
 
+        if (flightModesMenuItems.indexOf(activeVehicle.flightMode) == -1) {
+            activeVehicle.flightMode = flightModesMenuItems[0]
+        }
     }
 
     Connections {
