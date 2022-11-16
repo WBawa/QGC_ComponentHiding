@@ -31,17 +31,17 @@ DEFINES += CUSTOMHEADER=\"\\\"CustomCorePlugin.h\\\"\"
 DEFINES += CUSTOMCLASS=CustomCorePlugin
 
 TARGET   = AUVSIQGroundControl
-DEFINES += QGC_APPLICATION_NAME='"\\\"AUVSI QGroundControl\\\""'
+DEFINES += QGC_APPLICATION_NAME='"\\\"Deez Nuts Drone App\\\""'
 
 DEFINES += QGC_ORG_NAME=\"\\\"qgroundcontrol.org\\\"\"
 DEFINES += QGC_ORG_DOMAIN=\"\\\"org.qgroundcontrol\\\"\"
 
-QGC_APP_NAME        = "AUVSI QGroundControl"
-QGC_BINARY_NAME     = "AUVSIQGroundControl"
-QGC_ORG_NAME        = "AUVSI"
-QGC_ORG_DOMAIN      = "org.auvsi"
-QGC_ANDROID_PACKAGE = "org.auvsi.qgroundcontrol"
-QGC_APP_DESCRIPTION = "AUVSI QGroundControl"
+QGC_APP_NAME        = "Deez Nuts Drone App"
+QGC_BINARY_NAME     = "DeezNutsQGC"
+QGC_ORG_NAME        = "Deez Nuts"
+QGC_ORG_DOMAIN      = "org.deez"
+QGC_ANDROID_PACKAGE = "org.deez.nuts"
+QGC_APP_DESCRIPTION = "Deez Nuts in your mouth"
 QGC_APP_COPYRIGHT   = "Copyright (C) 2020 QGroundControl Development Team. All rights reserved."
 
 # Our own, custom resources
@@ -55,10 +55,6 @@ QML_IMPORT_PATH += \
 SOURCES += \
     $$PWD/src/AccessType.cpp \
     $$PWD/src/AccessTypeConfig.cpp \
-    $$PWD/src/CustomAPMFirmwarePlugin.cc \
-    $$PWD/src/CustomAPMFirmwarePluginFactory.cc \
-    $$PWD/src/CustomFirmwarePluginFactory.cc \
-    $$PWD/src/CustomPX4FirmwarePlugin.cc \
     $$PWD/src/CustomCorePlugin.cc \
     $$PWD/src/PasscodeMenu/PasscodeManager.cc
 
@@ -66,35 +62,8 @@ SOURCES += \
 HEADERS += \
     $$PWD/src/AccessType.h \
     $$PWD/src/AccessTypeConfig.h \
-    $$PWD/src/CustomAPMFirmwarePlugin.h \
-    $$PWD/src/CustomAPMFirmwarePluginFactory.h \
-    $$PWD/src/CustomFirmwarePluginFactory.h \
-    $$PWD/src/CustomPX4FirmwarePlugin.h \
     $$PWD/src/CustomCorePlugin.h \
     $$PWD/src/PasscodeMenu/PasscodeManager.h
 
 INCLUDEPATH += \
     $$PWD/src \
-
-# Enable Qt file copying utility
-CONFIG += file_copies
-
-DEFINES += UNIT_TEST_DISABLED
-# TODO: If compiling unit tests:
-DebugBuild { contains(DEFINES, UNIT_TEST_ENABLED) {
-    SOURCES += \
-        $$PWD/src/PasscodeMenu/PasscodeManagerTest.cpp
-
-    HEADERS += \
-        $$PWD/src/PasscodeMenu/PasscodeManagerTest.h
-
-    COPIES += testConfiguration
-    testConfiguration.files = $$files($$PWD/test/*.txt)
-    testConfiguration.path = $$OUT_PWD/staging
-
-} }
-
-COPIES += customConfiguration
-
-customConfiguration.files = $$files($$PWD/config/*.txt)
-customConfiguration.path  = $$OUT_PWD/staging
