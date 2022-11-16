@@ -4,6 +4,6 @@
     </qresource>
     <qresource prefix="/qml">
         <file alias="QGroundControl/Controls/FlightModeMenuIndicator.qml">res/Custom/CustomFlightModeMenuIndicator.qml</file>
-        <file alias="PasswordSettings.qml">res/PasswordSettings.qml</file>
+        <file alias="PasswordSettings.qml">res/Custom/PasswordSettings.qml</file>
     </qresource>
 </RCC>
