@@ -71,7 +71,7 @@ RowLayout {
         Layout.fillWidth: true
 
         QGCLabel {
-            text: activeVehicle ? activeVehicle.flightMode : qsTr("N/A", "No data to display")
+            text: activeVehicle ? activeVehicle.flightMode.toString() : qsTr("N/A", "No data to display")
             font.pointSize: fontPointSize
             Layout.alignment: Qt.AlignCenter
 

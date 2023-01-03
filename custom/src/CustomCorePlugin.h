@@ -6,7 +6,6 @@
 #include "AccessType.h"
 #include "QGCCorePlugin.h"
 #include <string>
-#include <CustomPX4FirmwarePlugin.h>
 
 class CustomCorePlugin : public QGCCorePlugin {
     Q_OBJECT
@@ -26,7 +25,6 @@ class CustomCorePlugin : public QGCCorePlugin {
     QVariantList &settingsPages(void) final;
     void paletteOverride(QString colorName, QGCPalette::PaletteColorInfo_t& colorInfo) final;
     QQmlApplicationEngine *createQmlApplicationEngine(QObject *parent) final;
-    CustomPX4FirmwarePlugin *px4FirmwarePlugin;
 
   private:
     void _addSettingsEntry(const QString &title, const char *qmlFile,
